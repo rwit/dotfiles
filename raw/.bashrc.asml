@@ -1,0 +1,85 @@
+#----------------------------------------------------------------------------#
+# File         : Template file: bashrc
+#
+# Usage:
+#    Copy this file to ~/.bashrc and adjust it for your needs.
+#
+# Function:
+#    Reads the generic bash settings.
+#    Set user defined aliases etc.
+#
+# SCCS tags when version control is used by individual users (DO NOT REMOVE):
+#
+# Ident       : @(#) .bashrc
+# File Version: @(#) 1.3
+# Last Checkin: @(#) 13/11/13 15:44:14
+#
+# Author       : Henri de Veer [AltenPTS]
+# Creation     : 2012-03-22
+#
+# History
+#
+# 2013-03-22 : Henri de Veer
+#              Initial version
+#
+#----------------------------------------------------------------------------#
+#                                                                            #
+#                   Copyright (c)  ASML B.V.  2013-2013                      #
+#                       Veldhoven - The Netherlands                          #
+#                                                                            #
+#----------------------------------------------------------------------------#
+
+#----------------------------------------------------------------------------#
+# Read General (portable) kshrc File.                                        #
+# DO NOT REMOVE THIS LINE OR YOUR ACCOUNT DOES NOT WORK ANYMORE !!!          #
+#----------------------------------------------------------------------------#
+. /sdev/defaults/genksh
+
+#----------------------------------------------------------------------------#
+#   WARNING WARNING WARNING WARNING WARNING WARNING:                         #
+#                                                                            #
+# DO NOT PUT ANYTHING IN THIS SCRIPT THAT PRINTS TO STDOUT/STDERROR          #
+#      OUTSIDE THE ${INTERACTIVE} CODE BLOCK !!!                             #
+#----------------------------------------------------------------------------#
+if [[ "${INTERACTIVE}" = "1" ]]
+then
+
+    #------------------------------------------------------------------------#
+    # Customize your prompt here if you want.                                #
+    #------------------------------------------------------------------------#
+    # Adjust the title with the view and pwd.
+    export MY_XTITLE=1
+
+    # Omit your own host in the prompt.
+    #export MY_HOST="wsasd..."
+
+    # Make the prompt BOLD
+    #export MY_PREPROMPT="${boldon}"
+    #export MY_PROMPT="${boldoff} $ "
+
+    # Supply my own custom prompt, overrides all others.
+    #export MY_HOST_C="${boldon}`uname -n`${boldoff}"
+
+    #------------------------------------------------------------------------#
+    # Special Settings.                                                      #
+    #------------------------------------------------------------------------#
+
+
+    #------------------------------------------------------------------------#
+    # List Directory.                                                        #
+    #------------------------------------------------------------------------#
+    alias ls='ls --color'
+    alias ll='ls -lF'
+
+    #------------------------------------------------------------------------#
+    # Command confirmations.                                                 #
+    #------------------------------------------------------------------------#
+    alias rm='rm -i'
+    alias cp='cp -ip'
+    alias mv='mv -i'
+
+    #------------------------------------------------------------------------#
+    # Activate the customized prompt, do not remove!
+    PS1=$(setprompt)
+
+fi

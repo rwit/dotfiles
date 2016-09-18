@@ -46,3 +46,12 @@ fi;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+# added by Anaconda2 4.1.1 installer
+#export PATH="/Users/ruud.withagen/anaconda/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+

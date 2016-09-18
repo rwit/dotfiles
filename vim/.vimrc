@@ -1,6 +1,8 @@
 " must be first, because it changes other options as a side effect
 set nocompatible
 
+execute pathogen#infect()
+
 " paste without auto indentation
 set paste
 
@@ -73,3 +75,6 @@ if has("autocmd")
   filetype plugin on
 endif
 
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && !exists('g:NVIM_loaded') | NERDTree | endif

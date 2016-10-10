@@ -51,6 +51,8 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 #export PATH="/Users/ruud.withagen/anaconda/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+export PYTHONPATH=`brew --prefix`/lib/python2.7/site-packages:$PYTHONPATH
+
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi

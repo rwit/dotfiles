@@ -4,7 +4,7 @@ set nocompatible
 execute pathogen#infect()
 
 " paste without auto indentation
-set paste
+"set paste
 
 " maintain undo history between sessions
 set undofile
